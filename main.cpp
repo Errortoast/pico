@@ -82,7 +82,7 @@ int main(){
 
             case '\t':
                 text[currentLine].insert(cursorPos, "   ");
-                cursorPos+=4;
+                cursorPos+=3;
                 break;
             
             default:
