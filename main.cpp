@@ -5,21 +5,34 @@
 using namespace std;
 
 int main(){
-    string file = "";
-
     system("clear");
 
+    /*
+    ----------------
+    Define variables
+    ----------------
+    */
     vector<string> text = {""};
-    int currentLine = 0;
-    int cursorPos = 0;
+    int currentLine = 0, cursorPos = 0;
+    int lnOffset = 0, posOffset = 0;
+    int screenLns, screenCols;
 
+    /*
+    -----
+    Setup
+    -----
+    */
     initscr();
     noecho();
     cbreak();
     keypad(stdscr, TRUE);
     idlok(stdscr, TRUE);
-    scrollok(stdscr, TRUE);
 
+    /*
+    ---------------------
+    Handle keyboard input
+    ---------------------
+    */
     int ch;
     while ((ch = getch()) != EOF) {
         switch(ch){
@@ -81,8 +94,8 @@ int main(){
             }
 
             case '\t':
-                text[currentLine].insert(cursorPos, "   ");
-                cursorPos+=3;
+                text[currentLine].insert(cursorPos, "    ");
+                cursorPos+=4;
                 break;
             
             default:
@@ -92,17 +105,49 @@ int main(){
                 }
                 break;
         }
-        clear();
-        for (int i = 0; i < text.size(); i++) {
-            mvprintw(i, 0, "%s", text[i].c_str());
+        /*
+        ----------------
+        Handle scrolling
+        ----------------
+        */
+        getmaxyx(stdscr, screenLns, screenCols);
+        if (currentLine >= lnOffset + screenLns) {
+            lnOffset = currentLine - screenLns + 1;
         }
-        move(currentLine, cursorPos);
+        if (currentLine < lnOffset) {
+            lnOffset = currentLine;
+        }
+        if (cursorPos >= posOffset + screenCols) {
+            posOffset = cursorPos - screenCols + 1;
+        }
+        if (cursorPos < posOffset) {
+            posOffset = cursorPos;
+        }
+
+        /*
+        ---------------
+        Print to screen
+        ---------------
+        */
+        clear();
+        for (int i = 0; i < screenLns; i++) {
+            int fileLine = i + lnOffset;
+            if (fileLine >= text.size())
+                break;
+
+            string line = text[fileLine];
+
+            if (posOffset < line.length()) {
+                string visible = line.substr(posOffset, screenCols);
+                mvprintw(i, 0, "%s", visible.c_str());
+            }
+        }
+        move(currentLine-lnOffset, cursorPos-posOffset);
         refresh();
     }
     /*TODO:
-        Scrolling
-        Writing file
         Reading file
+        Writing file
     */
     return 0;
 }
