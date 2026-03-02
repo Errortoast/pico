@@ -1,21 +1,45 @@
 #include <iostream>
 #include <ncurses.h>
 #include <vector>
+#include <fstream>
 
 using namespace std;
 
-int main(){
-    system("clear");
+int main(int argc, char* argv[]){
+    if (argc < 2) {
+        std::cerr << "Usage: editor <filename>\n";
+        return 1;
+    }
+
+    string fileName = argv[1];
 
     /*
     ----------------
     Define variables
     ----------------
     */
-    vector<string> text = {""};
+    vector<string> text;
     int currentLine = 0, cursorPos = 0;
     int lnOffset = 0, posOffset = 0;
     int screenLns, screenCols;
+
+    /*
+    ---------
+    Read file
+    ---------
+    */
+    ifstream fileIn(fileName);
+    string line;
+    if (fileIn.is_open()) {
+        while (getline(fileIn, line)) {
+            text.push_back(line);
+        }
+        fileIn.close();
+    }
+    if (text.empty()) {
+        text.push_back("");
+    }
+
 
     /*
     -----
@@ -27,6 +51,25 @@ int main(){
     cbreak();
     keypad(stdscr, TRUE);
     idlok(stdscr, TRUE);
+    /*
+    ---------------
+    Print to screen
+    ---------------
+    */
+    clear();
+    for (int i = 0; i < screenLns; i++) {
+        int fileLine = i + lnOffset;
+        if (fileLine >= text.size())
+            break;
+            string line = text[fileLine];
+
+        if (posOffset < line.length()) {
+            string visible = line.substr(posOffset, screenCols);
+            mvprintw(i, 0, "%s", visible.c_str());
+        }
+    }
+    move(currentLine-lnOffset, cursorPos-posOffset);
+    refresh();
 
     /*
     ---------------------
@@ -98,6 +141,17 @@ int main(){
                 cursorPos+=4;
                 break;
             
+            case 15: {
+                ofstream fileOut(fileName);
+                if (fileOut.is_open()) {
+                    for (const auto& str : text) {
+                        fileOut << str << '\n';
+                    }
+                    fileOut.close();
+                } 
+                break;
+            }
+
             default:
                 if (ch >= 32 && ch < 127) {
                     text[currentLine].insert(cursorPos, 1, static_cast<char>(ch));
@@ -146,8 +200,7 @@ int main(){
         refresh();
     }
     /*TODO:
-        Reading file
-        Writing file
+        Get file path from command arguments
     */
     return 0;
 }

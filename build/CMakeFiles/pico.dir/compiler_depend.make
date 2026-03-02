@@ -85,6 +85,7 @@ CMakeFiles/pico.dir/main.cpp.o: /home/errortoast/Repos/pico_text_editor/main.cpp
   /usr/include/c++/15/bits/basic_string.tcc \
   /usr/include/c++/15/bits/char_traits.h \
   /usr/include/c++/15/bits/charconv.h \
+  /usr/include/c++/15/bits/codecvt.h \
   /usr/include/c++/15/bits/concept_check.h \
   /usr/include/c++/15/bits/cpp_type_traits.h \
   /usr/include/c++/15/bits/cxxabi_forced.h \
@@ -92,6 +93,7 @@ CMakeFiles/pico.dir/main.cpp.o: /home/errortoast/Repos/pico_text_editor/main.cpp
   /usr/include/c++/15/bits/exception.h \
   /usr/include/c++/15/bits/exception_defines.h \
   /usr/include/c++/15/bits/exception_ptr.h \
+  /usr/include/c++/15/bits/fstream.tcc \
   /usr/include/c++/15/bits/functexcept.h \
   /usr/include/c++/15/bits/functional_hash.h \
   /usr/include/c++/15/bits/hash_bytes.h \
@@ -149,6 +151,7 @@ CMakeFiles/pico.dir/main.cpp.o: /home/errortoast/Repos/pico_text_editor/main.cpp
   /usr/include/c++/15/ext/numeric_traits.h \
   /usr/include/c++/15/ext/string_conversions.h \
   /usr/include/c++/15/ext/type_traits.h \
+  /usr/include/c++/15/fstream \
   /usr/include/c++/15/initializer_list \
   /usr/include/c++/15/ios \
   /usr/include/c++/15/iosfwd \
@@ -164,8 +167,10 @@ CMakeFiles/pico.dir/main.cpp.o: /home/errortoast/Repos/pico_text_editor/main.cpp
   /usr/include/c++/15/typeinfo \
   /usr/include/c++/15/vector \
   /usr/include/c++/15/x86_64-redhat-linux/bits/atomic_word.h \
+  /usr/include/c++/15/x86_64-redhat-linux/bits/basic_file.h \
   /usr/include/c++/15/x86_64-redhat-linux/bits/c++allocator.h \
   /usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h \
+  /usr/include/c++/15/x86_64-redhat-linux/bits/c++io.h \
   /usr/include/c++/15/x86_64-redhat-linux/bits/c++locale.h \
   /usr/include/c++/15/x86_64-redhat-linux/bits/cpu_defines.h \
   /usr/include/c++/15/x86_64-redhat-linux/bits/ctype_base.h \
@@ -346,13 +351,23 @@ CMakeFiles/pico.dir/main.cpp.o:
 
 /usr/include/c++/15/bits/stringfwd.h:
 
+/usr/include/c++/15/cwctype:
+
+/usr/include/c++/15/bits/stl_vector.h:
+
 /usr/include/bits/types/struct_FILE.h:
 
 /usr/include/asm/types.h:
 
+/usr/include/c++/15/bits/streambuf.tcc:
+
+/usr/include/bits/types/clockid_t.h:
+
 /lib64/libm.so.6:
 
 /usr/include/bits/atomic_wide_counter.h:
+
+/usr/include/c++/15/bits/fstream.tcc:
 
 /usr/include/linux/errno.h:
 
@@ -379,6 +394,10 @@ CMakeFiles/pico.dir/main.cpp.o:
 /usr/include/bits/endian.h:
 
 /usr/include/asm/errno.h:
+
+/usr/include/c++/15/x86_64-redhat-linux/bits/c++io.h:
+
+/usr/include/c++/15/bits/codecvt.h:
 
 /usr/include/bits/thread-shared-types.h:
 
@@ -518,6 +537,8 @@ CMakeFiles/pico.dir/main.cpp.o:
 
 /usr/include/c++/15/x86_64-redhat-linux/bits/gthr.h:
 
+/usr/include/c++/15/x86_64-redhat-linux/bits/basic_file.h:
+
 /usr/include/c++/15/type_traits:
 
 /usr/include/bits/floatn.h:
@@ -593,6 +614,8 @@ CMakeFiles/pico.dir/main.cpp.o:
 /usr/include/c++/15/bits/cxxabi_init_exception.h:
 
 /usr/include/c++/15/bits/basic_string.tcc:
+
+/usr/include/c++/15/fstream:
 
 /usr/include/c++/15/bits/ostream.h:
 
@@ -679,11 +702,3 @@ CMakeFiles/pico.dir/main.cpp.o:
 /usr/include/bits/types/mbstate_t.h:
 
 /usr/include/c++/15/bits/stl_uninitialized.h:
-
-/usr/include/c++/15/cwctype:
-
-/usr/include/c++/15/bits/stl_vector.h:
-
-/usr/include/bits/types/clockid_t.h:
-
-/usr/include/c++/15/bits/streambuf.tcc:
