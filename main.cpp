@@ -199,8 +199,5 @@ int main(int argc, char* argv[]){
         move(currentLine-lnOffset, cursorPos-posOffset);
         refresh();
     }
-    /*TODO:
-        Get file path from command arguments
-    */
     return 0;
 }
