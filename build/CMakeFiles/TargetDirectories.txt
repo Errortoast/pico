@@ -1,3 +1,0 @@
-/home/errortoast/Repos/pico_text_editor/build/CMakeFiles/pico.dir
-/home/errortoast/Repos/pico_text_editor/build/CMakeFiles/edit_cache.dir
-/home/errortoast/Repos/pico_text_editor/build/CMakeFiles/rebuild_cache.dir
