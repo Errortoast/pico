@@ -16,13 +16,13 @@ else
 fi
 
 echo "Compiling..."
-g++ -o cpp-editor main.cpp -lncurses
+g++ -o pico main.cpp -lncurses
 
 if [ $? -eq 0 ]; then
     echo "Installing to /usr/local/bin..."
-    sudo mv cpp-editor /usr/local/bin/
+    sudo mv pico /usr/local/bin/
     echo "------------------------------------------------"
-    echo "Success! Type 'cpp-editor <filename>' to start."
+    echo "Success! Type 'pico <filename>' to start."
 else
     echo "Compilation failed. Check if main.cpp exists in this folder."
     exit 1
