@@ -40,7 +40,7 @@ pico <filename>
 
 ---
 
-## Manual Build (Advanced)
+## Manual Build
 
 If you prefer to compile manually, ensure you have the `ncurses` development headers installed on your system:
 
