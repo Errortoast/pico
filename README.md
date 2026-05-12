@@ -1,6 +1,6 @@
 # Pico: A Simple C++ Terminal Editor
 
-Pico is a lightweight, terminal-based text editor built in C++ using the `ncurses` library. This project was created as a hands-on way to learn C++ fundamentals, file I/O, and terminal UI handling.
+Pico is a lightweight, terminal-based text editor built in C++ using the `ncurses` library. This project was created as a hands-on way to learn C++ fundamentals, file I/O, and terminal UI handling. It was named before I knew about the existance of the other, more popular, pico text editor
 
 ## Quick Install (Linux)
 
